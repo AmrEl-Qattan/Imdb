@@ -3,8 +3,7 @@ import Results from "./components/ResultsApi/Results";
 const API_KEY = process.env.API_KEY;
 
 export default async function Home({ searchParams }) {
-  
-  const genre = searchParams?.genre || "fetchTrending"; 
+  const genre = (await searchParams)?.genre || "fetchTrending"; 
 
   try {
     const res = await fetch(
